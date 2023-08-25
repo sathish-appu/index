@@ -1,0 +1,72 @@
+package com.Main;
+ 
+import java.util.*;
+
+public class Main {
+	    public static void main (String[]args) {
+		int pin = 1205;
+		int balance = 10000;
+		int Addamount = 0;
+		int Takeamount = 0; 
+		 
+		String name; 
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter our Pin Number");
+		int password = scanner.nextInt();
+		
+		if(password==pin) {
+			System.out.println("Enter you name");
+			name = scanner.next();
+			System.out.println("Welcome" + name);
+			 
+			while(true) {
+				System.out.println("press 1 to check your balance");
+				System.out.println("press 2 to check your add amount");
+				System.out.println("press 3 to check your take amount");
+				System.out.println("press 4 to check your recipte");
+				
+				
+				int  opt = scanner.nextInt();
+				switch(opt) {
+				case 1:
+				System.out.println("your avaliable balance is " + balance);
+				break;
+				
+				case 2:
+					System.out.println("How Much Amount You Want To Be Add In Your Account");
+					Addamount = scanner.nextInt();
+					System.out.println("our Amunt Has Been Sucessfully Credited");
+					balance = Addamount + balance;
+					break;
+					
+				case 3:
+					System.out.println("How Much Amount You Want To Be take In Your Account");
+					Takeamount = scanner.nextInt();
+					if(Takeamount>balance) {
+						System.out.println("your Bank Balance is Insufficient");
+						System.out.println("try less than your balance amount");
+					}
+						else {
+							System.out.println("our amount as been taken");
+							balance = Takeamount - balance;
+						}
+					break;
+					
+				    case 4:
+					System.out.println("Welcome to HDFC Atm");
+					System.out.println("Available Balance is " + balance);
+					System.out.println("Amount Deposited  " + Addamount);
+					System.out.println("Amount Take" + Takeamount);
+					System.out.println("Thank You For Using HDFC Bank");
+					break;
+					
+					
+				   
+				  
+			}
+		}
+		
+}
+	}
+}
+	    
